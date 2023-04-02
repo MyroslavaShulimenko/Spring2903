@@ -21,7 +21,8 @@ public class EmployeeController {
                 new Employee("124","Tomas","Old",21),
                 new Employee("125","Olga","Volkov",18),
                 new Employee("126","Eva","",17),
-                new Employee("127","Jeck","Slee",20)
+                new Employee("127","Jeck","Slee",20),
+                new Employee("128","Jeckob")
 
         ));
     }
@@ -120,5 +121,13 @@ public class EmployeeController {
                 e.setSurname(string);
             }
         }
+    }  @PatchMapping(value = "/surnameDefault")
+    public void surnameDefault11(@RequestParam String surname){
+        for (Employee e : employees) {
+            if (e.getSurname() == null){
+                e.setSurname(surname);
+            }
+        }
     }
+
 }
